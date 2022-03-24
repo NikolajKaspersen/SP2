@@ -1,14 +1,26 @@
 package Biludlejning;
 
-public class GasolineCar extends AFuelCar{
-    private int kmPrL;
+public class GasolineCar extends AFuelCar
+{
+
     private int fee;
-    public GasolineCar(String make, String model, int numberOfDoors)
-    {
-        super(make, model, numberOfDoors);
+
+    public GasolineCar(String registrationNumber, String make, String model, int numberOfDoors, int kmPrLitre) {
+        super(registrationNumber, make, model, numberOfDoors, kmPrLitre);
     }
+
+
+    @Override
+    public String getFuelType()
+    {
+        return "GasolineCar";
+    }
+
+
+
     public int getRegistrationFee()
     {
+        int kmPrL= getKmPrLitre();
         if (kmPrL > 20 && kmPrL < 50)
         {
             fee = 330;
@@ -34,9 +46,12 @@ public class GasolineCar extends AFuelCar{
     }
 
     @Override
-    public String toString()
-    {
-        return null;
+    public String toString() {
+        return "GasolineCar{" +
+                "Make='" + Make + '\'' +
+                ", Model='" + Model + '\'' +
+                ", NumberOfDoors=" + NumberOfDoors +
+                '}';
     }
 
 }

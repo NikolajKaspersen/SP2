@@ -1,23 +1,27 @@
 package Biludlejning;
 
-abstract public class AFuelCar extends ACar {
-    int kmPrLitre;
+abstract public class AFuelCar extends ACar
+{
+    protected int kmPrLitre;
+    protected String FuelType;
 
-    public AFuelCar(String make, String model, int numberOfDoors) {
-
-        super(make, model, numberOfDoors);
-
-    }
-
-    public String getFuelType()
+    public AFuelCar(String registrationNumber, String make, String model, int numberOfDoors, int kmPrLitre)
     {
-        return null;
+
+        super(registrationNumber, make, model, numberOfDoors);
+        this.kmPrLitre = kmPrLitre;
+
     }
+
+    public abstract String getFuelType();
+
+
 
     public int getKmPrLitre()
     {
-        return 0;
+        return kmPrLitre;
     }
+
     @Override
     public String toString()
     {

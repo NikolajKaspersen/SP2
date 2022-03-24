@@ -9,9 +9,9 @@ public class ElectricCar extends ACar {
 
 
 
-    public ElectricCar(int batteryCapacity, int maxRange)
+    public ElectricCar(int batteryCapacity, int maxRange,String registrationNumber,String make,String model,int numberOfDoors)
     {
-        super(make, model, numberOfDoors);
+        super(registrationNumber, make, model, numberOfDoors);
         this.batteryCapacity = batteryCapacity;
         this.maxRange = maxRange;
     }
@@ -63,8 +63,14 @@ public class ElectricCar extends ACar {
     }
 
     @Override
-    public String toString()
-    {
-        return null;
+    public String toString() {
+        return "ElectricCar{" +
+                "BatteryCapacity"+ batteryCapacity + '\''+
+                "maxRange" + maxRange +'\''+
+                "Make='" + Make + '\'' +
+                ", Model='" + Model + '\'' +
+                ", NumberOfDoors=" + NumberOfDoors +
+                '}';
     }
+
 }

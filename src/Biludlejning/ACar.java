@@ -6,8 +6,8 @@ abstract public class ACar implements Car{
     final String Model;
     final int NumberOfDoors;
 
-    public ACar(String make, String model, int numberOfDoors) {
-        //this.RegistrationNumber = registrationNumber;
+    public ACar(String registrationNumber ,String make, String model, int numberOfDoors) {
+        this.RegistrationNumber = registrationNumber;
         this.Make = make;
         this.Model = model;
         this.NumberOfDoors = numberOfDoors;
@@ -32,8 +32,12 @@ abstract public class ACar implements Car{
     }
 
     @Override
-    public String toString()
-    {
-        return null;
+    public String toString() {
+        return "ACar{" +
+                "RegistrationNumber='" + RegistrationNumber + '\'' +
+                ", Make='" + Make + '\'' +
+                ", Model='" + Model + '\'' +
+                ", NumberOfDoors=" + NumberOfDoors +
+                '}';
     }
 }

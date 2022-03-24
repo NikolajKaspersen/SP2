@@ -7,18 +7,20 @@ public class DieselCar extends AFuelCar{
 
     private boolean particleFilter;
 
-    public DieselCar(String make, String model, int numberOfDoors) {
-        super(make, model, numberOfDoors);
+    public DieselCar(String registrationNumber, String make, String model, int numberOfDoors, int kmPrLitre, boolean hasParticlefilter) {
+        super(registrationNumber, make, model, numberOfDoors, kmPrLitre);
+        this.particleFilter =hasParticlefilter;
+    }
+
+
+    @Override
+    public String getFuelType() {
+        return "DieselCar";
     }
 
     public boolean hasParticleFIlter()
     {
-
-        if(false)
-        {
-            i = 1000;
-        }
-        return true;
+        return this.particleFilter;
     }
 
     public int getRegistrationFee()
@@ -43,12 +45,19 @@ public class DieselCar extends AFuelCar{
         {
             fee = 10470+15260;
         }
-        return fee+i;
+        if (!hasParticleFIlter())
+        {
+            fee+=1000;
+        }
+        return fee;
     }
 
     @Override
-    public String toString()
-    {
-        return null;
+    public String toString() {
+        return "DieselCar{" +
+                "Make='" + Make + '\'' +
+                ", Model='" + Model + '\'' +
+                ", NumberOfDoors=" + NumberOfDoors +
+                '}';
     }
 }

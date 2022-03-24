@@ -7,16 +7,26 @@ public class FleetOfCars {
 
     public void addCar(Car car)
     {
-
+        fleet.add(car);
     }
     public int getTotalRegistrationFeeForFleet()
     {
-        return 0;
+        int total = 0;
+        for(Car car1: fleet){
+            total = total+ car1.getRegistrationFee();
+        }
+        return total;
     }
+
     @Override
     public String toString()
     {
-        return null;
+        String total = " ";
+        for(Car car1: fleet){
+            total = total+ car1.toString()+"\n";
+        }
+        return total;
+
     }
 
 }
