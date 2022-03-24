@@ -6,6 +6,7 @@ abstract public class AFuelCar extends ACar {
     public AFuelCar(String make, String model, int numberOfDoors) {
 
         super(make, model, numberOfDoors);
+
     }
 
     public String getFuelType()
